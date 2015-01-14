@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5, CSS3 and JavaScript demo</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="FDG.css">
+	
+	<!-- Library Imports-->
+	<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<!-- Bootstrap-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
+	<!-- Json Object-->
+	<script type="application/json" id="mis">
+    {
+		"nodes":[
+		{"name":"User","group":10},
+		{"name":"Billy","group":5},
+		{"name":"Bob","group":5},
+		{"name":"file1","group":3},
+		{"name":"file2","group":3},
+		{"name":"file3","group":3}],
+
+		"links":[
+		{"source":0,"target":1,"value":10},
+		{"source":0,"target":2,"value":10},
+		{"source":1,"target":3,"value":10},
+		{"source":2,"target":4,"value":10},
+		{"source":2,"target":5,"value":10},
+		{"source":0,"target":3,"value":10},
+		{"source":0,"target":5,"value":10}]
+    }	
+	</script>
+
+</head>
+<body>
+<!-- Start your code here -->
+
+
+
+<!-- Navigation Bar-->
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">DashBoard</a>
+		</div>
+		<div>
+		  <ul class="nav navbar-nav">
+			<li class="active"><a href="#">Overview</a></li>
+
+			<li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Projects <span class="label label-default">2</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="FDG.html">Project1</a></li>
+                            <li><a href="FDG2.html">Project2</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Past Projects</a></li>
+                        </ul>
+                    </li>
+			<li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">People <span class="label label-default">4</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+							<li><a href="Contacts.html">Contact List</a></li>
+                            <li><a href="#">Inbox</a></li>
+                            <li><a href="#">Drafts</a></li>
+                            <li><a href="#">Sent Items</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Trash</a></li>
+                        </ul>
+                    </li>
+			<li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Papers <span class="label label-default">6</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Papers.html">View</a></li>
+                            <li><a href="#">Submit</a></li>
+                        </ul>
+                    </li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
+<!-- Progress Bar-->
+	<div class="Pbar">
+		<div id="ptext">Project Progress</div>
+		<div class="progress" id="pbar">
+			<div class="progress-bar" style="width: 30%;">
+				<span class="sr-only">Project: 30% Complete</span>
+			</div>
+		</div>
+	</div>
+
+<!-- Alert Messages-->
+	<div class="abar" id="abar">
+		<div class="alert alert-warning" id="abar">
+			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			<strong>Alert!</strong> Updates have been made since you last signed on
+		</div>
+	</div>	
+
+<!-- Force Directed Graph -->
+	<div id='graph' onclick=clicksound.playclip()>
+	</div>
+
+
+
+<!-- JavaScript -->
+<script src="FDG.js"></script>
+
+
+<!-- End your code here -->
+</body>
+</html>
