@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div ng-app="Quiz" ng-controller="score">
+<p style="text-align:center">Score: {{score}}</p>
+<script>
+var app = angular.module('Quiz', []);
+app.controller('score', function($scope) {
+    $scope.score = 0;
+	$scope.correct= function(){
+		$scope.score++;
+	}
+	$scope.incorrect=function(){
+		$scope.score--;
+	}
+});
+</script>
+<form>
+  Question 1: What is the capitol of Azerbaijan?
+  <input type="radio" ng-model="options1" value="dist1" ng-change="incorrect()">Tblisi
+  <input type="radio" ng-model="options1" value="key" ng-change="correct()">Baku
+  <input type="radio" ng-model="options1" value="dist2" ng-change="incorrect()">Yeravan
+  <input type="radio" ng-model="options1" value="dist3" ng-change="incorrect()">Astana
+</form>
+<br>
+
+<div ng-switch="options1">
+  <div ng-switch-when="dist1">
+     <p>Incorrect</p>
+  </div>
+  <div ng-switch-when="key">
+     <p>Correct!</p>
+  </div>
+  <div ng-switch-when="dist2">
+     <p>Incorrect</p>
+  </div>
+  <div ng-switch-when="dist3">
+     <p>Incorrect</p>
+  </div>
+</div>
+<form>
+<br>
+  Question 2: What organelle is known as the "power generator" of the cell?
+  <input type="radio" ng-model="options2" value="key" ng-change="correct()">Mitochondria
+  <input type="radio" ng-model="options2" value="dist1" ng-change="incorrect()">Cell Wall
+  <input type="radio" ng-model="options2" value="dist2" ng-change="incorrect()">Nucleus
+  <input type="radio" ng-model="options2" value="dist3" ng-change="incorrect()">Vacuole
+</form>
+<br>
+<div ng-switch="options2">
+  <div ng-switch-when="dist1">
+     <p>Incorrect</p>
+  </div>
+  <div ng-switch-when="key">
+     <p>Correct!</p>
+  </div>
+  <div ng-switch-when="dist2">
+     <p>Incorrect</p>
+  </div>
+  <div ng-switch-when="dist3">
+     <p>Incorrect</p>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
